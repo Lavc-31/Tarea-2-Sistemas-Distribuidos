@@ -68,8 +68,10 @@ while flag:
 
         venta = {"cliente" : cliente, "cantidad" : cantidad, "hora" : hora, "stock_s" :stock_s, "ubicacion" :ubicacion}
         producer.send('ventas', venta)
-		producer.send('stock', venta)
-		producer.send('coordenadas', venta, partition=0)
+
+        producer.send('stock', venta)
+
+        producer.send('coordenadas', venta, partition=0)
 
     elif(opcion == 3):
         print("Ingrese la ubicacion del carrito profugo:\n")
