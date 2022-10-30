@@ -68,13 +68,15 @@ while flag:
 
         venta = {"cliente" : cliente, "cantidad" : cantidad, "hora" : hora, "stock_s" :stock_s, "ubicacion" :ubicacion}
         producer.send('ventas', venta)
+		producer.send('stock', venta)
+		producer.send('coordenadas', venta, partition=0)
 
     elif(opcion == 3):
         print("Ingrese la ubicacion del carrito profugo:\n")
         profugo = input()
 
         profugo_dict = {"profugo" : profugo}
-        producer.send('coordenadas', profugo)
+        producer.send('coordenadas', profugo, partition=1)
 
     elif(opcion == 4):
         flag = False
