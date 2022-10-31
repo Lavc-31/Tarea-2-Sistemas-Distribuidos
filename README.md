@@ -1,3 +1,3 @@
 # Tarea-2-Sistemas-Distribuidos
 
-Link Video: 
+Link Video: https://youtu.be/heXThf72RII
